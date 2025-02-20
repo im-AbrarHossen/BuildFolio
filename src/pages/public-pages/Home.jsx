@@ -1,8 +1,10 @@
 import AboutBuilding from "../../components/AboutBuilding";
+import AmenitiesFacilities from "../../components/AmenitiesFacilities";
 import ApartmentLocation from "../../components/ApartmentLocation";
 import Banner from "../../components/Banner";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import WhyChooseUs from "../../components/WhyChooseUs";
 
 const Home = () => {
     return (
@@ -14,6 +16,8 @@ const Home = () => {
                 <Banner></Banner>
                 <AboutBuilding></AboutBuilding>
                 <ApartmentLocation></ApartmentLocation>
+                <WhyChooseUs></WhyChooseUs>
+                <AmenitiesFacilities></AmenitiesFacilities>
             </main>
             <footer>
                 <Footer></Footer>

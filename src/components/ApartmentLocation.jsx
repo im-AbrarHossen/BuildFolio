@@ -4,8 +4,8 @@ import 'leaflet/dist/leaflet.css';
 
 const ApartmentLocation = () => {
     return (
-        <div className='py-10'>
-            <h1 className='text-center text-2xl font-bold mb-5'>Apartment Location</h1>
+        <div className='pt-[50px]'>
+            <h1 className='text-center text-2xl lg:text-3xl font-bold mb-5'>Apartment Location</h1>
             <MapContainer
                 center={[23.7568, 90.4255]} // Updated coordinates for Goran, Khilgaon, Dhaka
                 zoom={15}

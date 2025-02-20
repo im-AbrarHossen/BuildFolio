@@ -23,7 +23,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className="flex justify-between items-center w-11/12 mx-auto bg-gray-300 rounded px-2">
+        <div className="flex justify-between items-center w-full bg-gray-300 rounded px-2">
             <details className="dropdown lg:hidden">
                 <summary className="btn bg-[#026C84] text-white">
                     <svg
