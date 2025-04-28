@@ -6,7 +6,7 @@ const Apartments = () => {
     const [filteredApartments, setFilteredApartments] = useState([]); // Filtered by search or range
     const [currentPage, setCurrentPage] = useState(1);
     const [rentRange, setRentRange] = useState({ min: '', max: '' });
-    const itemsPerPage = 6;
+    const itemsPerPage = 12;
 
     // Fetch apartments
     useEffect(() => {
@@ -76,7 +76,7 @@ const Apartments = () => {
             </div>
 
             {/* Apartments Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {currentItems.map((apartment) => (
                     <ApartmentCard
                         key={apartment._id}
@@ -86,20 +86,40 @@ const Apartments = () => {
             </div>
 
             {/* Pagination */}
-            <div className="flex justify-center mt-6">
+            <div className="flex justify-center items-center mt-10 gap-2 flex-wrap">
+                {/* Previous Button */}
+                <button
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className={`px-4 py-2 border rounded ${currentPage === 1 ? "bg-gray-300 cursor-not-allowed" : "bg-gray-200 hover:bg-gray-300"
+                        }`}
+                >
+                    Previous
+                </button>
+
+                {/* Page Numbers */}
                 {Array.from({ length: totalPages }, (_, index) => (
                     <button
                         key={index}
                         onClick={() => handlePageChange(index + 1)}
-                        className={`px-4 py-2 mx-1 border rounded ${
-                            currentPage === index + 1
+                        className={`px-4 py-2 border rounded ${currentPage === index + 1
                                 ? "bg-[#026C84] hover:bg-[#2c7c8f] text-white"
-                                : "bg-gray-200"
-                        }`}
+                                : "bg-gray-200 hover:bg-gray-300"
+                            }`}
                     >
                         {index + 1}
                     </button>
                 ))}
+
+                {/* Next Button */}
+                <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className={`px-4 py-2 border rounded ${currentPage === totalPages ? "bg-gray-300 cursor-not-allowed" : "bg-gray-200 hover:bg-gray-300"
+                        }`}
+                >
+                    Next
+                </button>
             </div>
         </div>
     );

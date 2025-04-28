@@ -37,28 +37,37 @@ const ApartmentCard = ({ apartment }) => {
                         confirmButtonText: 'Cool'
                     });
                 } else if (data?.error) {
-                    alert(data.error);
+                    Swal.fire({
+                        title: 'Error!',
+                        text: `${data.error}`,
+                        icon: 'error',
+                        confirmButtonText: 'Cool'
+                    });
                 }
             })
             .catch(() => alert('Failed to submit agreement request.'));
     };
     return (
         <div>
-            <div className="bg-pink-100 text-black border shadow-md rounded p-4">
-                <img className="h-[180px] w-full object-cover rounded" src={apartment.apartmentImage} alt="Thumbnail" />
-                <div className="flex items-center justify-between mt-4 font-semibold">
-                    <p>Floor No: {apartment.floorNo}</p>
-                    <p>{apartment.blockName}</p>
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden text-black border">
+                <img className="h-[180px] w-full object-cover rounded rounded-b-none" src={apartment.apartmentImage} alt="Thumbnail" />
+                <div className="p-4">
+                    <div className="flex items-center justify-between font-semibold">
+                        <p>Floor No: {apartment.floorNo}</p>
+                        <p>{apartment.blockName}</p>
+                    </div>
+                    <div className="flex items-center justify-between font-semibold">
+                        <p>Apartment No: {apartment.apartmentNo}</p>
+                        <p>Rent: {apartment.rent}</p>
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <button
+                            onClick={handleAgreement}
+                            className="mt-4 btn btn-outline text-[#026C84] hover:bg-[#026C84] border-[#026C84] w-full font-bold rounded">
+                            {apartment.agreementButton}
+                        </button>
+                    </div>
                 </div>
-                <div className="flex items-center justify-between font-semibold">
-                    <p>Apartment No: {apartment.apartmentNo}</p>
-                    <p>Rent: {apartment.rent}</p>
-                </div>
-                <button
-                    onClick={handleAgreement}
-                    className="btn mt-4 w-full bg-[#026C84] text-white rounded hover:bg-[#2c7c8f]">
-                    {apartment.agreementButton}
-                </button>
             </div>
         </div>
     );

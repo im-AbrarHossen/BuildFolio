@@ -58,7 +58,7 @@ const Dashboard = () => {
                 {/* Sidebar */}
                 <aside
                     className={`${isSidebarOpen ? "lg:w-64 w-[220px]" : "w-16"
-                        } bg-gray-800 text-white transition-all duration-300`}
+                        } bg-[#026C84] text-white transition-all duration-300`}
                 >
                     <div className="h-full flex flex-col p-4">
                         <button
@@ -73,7 +73,7 @@ const Dashboard = () => {
                                 <li>
                                     <Link
                                         to="/dashboard/my-profile"
-                                        className="block py-2 px-3 rounded hover:bg-gray-700"
+                                        className="block py-2 px-3 rounded hover:bg-[#3999ae]"
                                     >
                                         My Profile
                                     </Link>
@@ -82,7 +82,7 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/manage-members"
-                                            className="block py-2 px-3 rounded hover:bg-gray-700"
+                                            className="block py-2 px-3 rounded hover:bg-[#3999ae]"
                                         >
                                             Manage Members
                                         </Link>
@@ -92,7 +92,7 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/make-payment"
-                                            className="block py-2 px-3 rounded hover:bg-gray-700"
+                                            className="block py-2 px-3 rounded hover:bg-[#3999ae]"
                                         >
                                             Make Payment
                                         </Link>
@@ -102,7 +102,7 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/payment-history"
-                                            className="block py-2 px-3 rounded hover:bg-gray-700"
+                                            className="block py-2 px-3 rounded hover:bg-[#3999ae]"
                                         >
                                             Payment History
                                         </Link>
@@ -115,7 +115,7 @@ const Dashboard = () => {
                                                 ? "/dashboard/make-announcements"
                                                 : "/dashboard/announcements"
                                         }
-                                        className="block py-2 px-3 rounded hover:bg-gray-700"
+                                        className="block py-2 px-3 rounded hover:bg-[#3999ae]"
                                     >
                                         {adminEmails.includes(user.email) ? "Make Announcement" : "Announcements"}
                                     </Link>
@@ -124,7 +124,7 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/agreement-request"
-                                            className="block py-2 px-3 rounded hover:bg-gray-700"
+                                            className="block py-2 px-3 rounded hover:bg-[#3999ae]"
                                         >
                                             Agreement Requests
                                         </Link>
@@ -134,7 +134,7 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/manage-coupons"
-                                            className="block py-2 px-3 rounded hover:bg-gray-700"
+                                            className="block py-2 px-3 rounded hover:bg-[#3999ae]"
                                         >
                                             Manage Coupons
                                         </Link>
@@ -143,7 +143,7 @@ const Dashboard = () => {
                             </ul>
                             <button
                                 onClick={handleLogout}
-                                className="block w-full text-start py-2 px-3 rounded hover:bg-gray-700"
+                                className="block w-full text-start py-2 px-3 rounded hover:bg-[#3999ae]"
                             >
                                 LogOut
                             </button>

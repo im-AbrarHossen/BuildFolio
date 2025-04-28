@@ -45,9 +45,9 @@ const Navbar = () => {
                     <li><NavLink to="/apartment">Apartment</NavLink></li>
                 </ul>
             </details>
-            <Link to="/" className="flex lg:flex-row flex-col items-center">
+            <Link to="/" className="flex lg:flex-row flex-col items-center lg:ml-[-20px]">
                 <img className="lg:w-[90px] md:w-[80px] sm:w-[70px] w-[60px]" src={logo} alt="" />
-                <h1 className="lg:text-3xl md:text-2xl sm:text-xl text-lg font-bold text-[#026C84]">BuildFolio</h1>
+                <h1 className="lg:text-3xl md:text-2xl sm:text-xl text-lg font-bold text-[#026C84] lg:ml-[-12px]">BuildFolio</h1>
             </Link>
             <div className="hidden lg:flex lg:gap-5">
                 <div className="hidden lg:flex">
