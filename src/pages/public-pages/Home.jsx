@@ -2,8 +2,13 @@ import AboutBuilding from "../../components/AboutBuilding";
 import AmenitiesFacilities from "../../components/AmenitiesFacilities";
 import ApartmentLocation from "../../components/ApartmentLocation";
 import Banner from "../../components/Banner";
+import BlogArticles from "../../components/BlogArticles";
+import ContactUs from "../../components/ContactUs";
+import CustomerTestimonials from "../../components/CustomerTestimonials";
+import FAQSection from "../../components/FAQSection";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import RentalProcess from "../../components/RentalProcess";
 import WhyChooseUs from "../../components/WhyChooseUs";
 
 const Home = () => {
@@ -18,6 +23,11 @@ const Home = () => {
                 <ApartmentLocation></ApartmentLocation>
                 <WhyChooseUs></WhyChooseUs>
                 <AmenitiesFacilities></AmenitiesFacilities>
+                <CustomerTestimonials></CustomerTestimonials>
+                <RentalProcess></RentalProcess>
+                <BlogArticles></BlogArticles>
+                <FAQSection></FAQSection>
+                <ContactUs></ContactUs>
             </main>
             <footer>
                 <Footer></Footer>
