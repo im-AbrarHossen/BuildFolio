@@ -1,12 +1,6 @@
 # Project Name
 ### BuildFolio
 
-# Front-End GitHub Repository Link
-### https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-im-AbrarHossen.git
-
-# Back-End GitHub Repository Link
-### https://github.com/Programming-Hero-Web-Course4/b10a12-server-side-im-AbrarHossen.git
-
 # Live Server Link
 ### https://buildfolio-c5fe7.web.app/
 
