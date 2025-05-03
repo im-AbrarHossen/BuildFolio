@@ -83,7 +83,7 @@ const Dashboard = () => {
                                         to="/dashboard/my-profile"
                                         className={`px-3 py-2 border-none rounded w-full text-white flex flex-row items-center ${isActive("/dashboard/my-profile") ? "bg-secondary" : "bg-transparent hover:bg-secondary"}`}
                                     >
-                                        {isSidebarOpen ? "My Profile" : <span className="text-xl"><CgProfile className="mx-[-6px]" /></span>}
+                                        {isSidebarOpen ? "Profile" : <span className="text-xl"><CgProfile className="mx-[-6px]" /></span>}
                                     </Link>
                                 </li>
                                 {adminEmails.includes(user.email) && (

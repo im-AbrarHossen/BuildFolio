@@ -7,8 +7,8 @@ import Login from "../pages/AuthPages/Login";
 import Register from "../pages/AuthPages/Register";
 import Dashboard from "../pages/private-pages/Dashboard";
 import PrivateRouter from "../routers/PrivateRouter"
-import MyProfile from "../pages/private-pages/MyProfile"
-import Announcements from "../pages/private-pages/Announcements"
+import MyProfile from "../components/MyProfile"
+import Announcements from "../components/Announcements"
 import AgreementRequest from "../components/AgreementRequest";
 import MakeAnnouncement from "../components/MakeAnnouncement";
 import ManageMembers from "../components/ManageMembers";
@@ -19,6 +19,7 @@ import ErrorPage from "../pages/public-pages/ErrorPage";
 import AdminRouter from "./AdminRouter";
 import MemberRouter from "./MemberRouter";
 import Payment from "../PaymentComponents/Payment";
+import WelcomeDashboard from "../components/WelcomeDashboard";
 
 const router = createBrowserRouter([
     {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Announcements />,
+                element: <WelcomeDashboard />,
             },
             {
                 path: "my-profile",
