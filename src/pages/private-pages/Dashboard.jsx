@@ -1,9 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import DashboardNav from "../../components/DashboardNav";
 import { BiSolidArrowFromLeft, BiSolidArrowToLeft } from "react-icons/bi";
 import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
+import { CgLogOut, CgProfile } from "react-icons/cg";
+import { TfiAnnouncement } from "react-icons/tfi";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
 
 const Dashboard = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -11,6 +14,7 @@ const Dashboard = () => {
     const [adminEmails, setAdminEmails] = useState([]);
     const [memberEmails, setMemberEmails] = useState([]);
     const [loading, setLoading] = useState(true);
+    const location = useLocation();
 
     const handleLogout = async () => {
         try {
@@ -20,6 +24,8 @@ const Dashboard = () => {
             console.error("Logout failed:", error);
         }
     };
+
+    const isActive = (path) => location.pathname === path;
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -58,7 +64,7 @@ const Dashboard = () => {
                 {/* Sidebar */}
                 <aside
                     className={`${isSidebarOpen ? "lg:w-64 w-[220px]" : "w-16"
-                        } bg-[#026C84] text-white transition-all duration-300`}
+                        } bg-primary text-white transition-all duration-300`}
                 >
                     <div className="h-full flex flex-col p-4">
                         <button
@@ -67,15 +73,17 @@ const Dashboard = () => {
                         >
                             {isSidebarOpen ? <BiSolidArrowToLeft></BiSolidArrowToLeft> : <BiSolidArrowFromLeft></BiSolidArrowFromLeft>}
                         </button>
-                        <div className={`${isSidebarOpen ? "block" : "hidden"}`}>
-                            <Link to='/dashboard' className="text-2xl font-bold mb-4">Dashboard</Link>
+                        <div className="flex flex-col gap-3">
+                            <Link to='/dashboard' className="text-2xl font-bold mb-4">
+                                {isSidebarOpen ? "Dashboard" : <span className="text-xl"><MdOutlineDashboardCustomize className="ml-2" /></span>}
+                            </Link>
                             <ul className="space-y-2">
                                 <li>
                                     <Link
                                         to="/dashboard/my-profile"
-                                        className="block py-2 px-3 rounded hover:bg-[#3999ae]"
+                                        className={`px-3 py-2 border-none rounded w-full text-white flex flex-row items-center ${isActive("/dashboard/my-profile") ? "bg-secondary" : "bg-transparent hover:bg-secondary"}`}
                                     >
-                                        My Profile
+                                        {isSidebarOpen ? "My Profile" : <span className="text-xl"><CgProfile className="mx-[-6px]" /></span>}
                                     </Link>
                                 </li>
                                 {adminEmails.includes(user.email) && (
@@ -92,7 +100,7 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/make-payment"
-                                            className="block py-2 px-3 rounded hover:bg-[#3999ae]"
+                                            className="block py-2 px-3 rounded hover:bg-secondary"
                                         >
                                             Make Payment
                                         </Link>
@@ -115,9 +123,23 @@ const Dashboard = () => {
                                                 ? "/dashboard/make-announcements"
                                                 : "/dashboard/announcements"
                                         }
-                                        className="block py-2 px-3 rounded hover:bg-[#3999ae]"
+                                        className={`pl-3 py-2 border-none rounded w-full text-white flex items-center gap-3 ${isActive(
+                                            adminEmails.includes(user.email)
+                                                ? "/dashboard/make-announcements"
+                                                : "/dashboard/announcements"
+                                        )
+                                                ? "bg-secondary"
+                                                : "bg-transparent hover:bg-secondary"
+                                            }`}
                                     >
-                                        {adminEmails.includes(user.email) ? "Make Announcement" : "Announcements"}
+                                        
+                                        {isSidebarOpen ? 
+                                            <span>
+                                                {adminEmails.includes(user.email)
+                                                    ? "Make Announcement"
+                                                    : "Announcements"}
+                                            </span> : <TfiAnnouncement className="text-xl ml-[-6px]" />
+                                        }
                                     </Link>
                                 </li>
                                 {adminEmails.includes(user.email) && (
@@ -143,9 +165,9 @@ const Dashboard = () => {
                             </ul>
                             <button
                                 onClick={handleLogout}
-                                className="block w-full text-start py-2 px-3 rounded hover:bg-[#3999ae]"
+                                className="block w-full text-start py-2 pl-3 rounded hover:bg-secondary"
                             >
-                                LogOut
+                                {isSidebarOpen ? "Logout" : <span className="text-xl"><CgLogOut className="ml-[-5px]"/></span>}
                             </button>
                         </div>
                     </div>

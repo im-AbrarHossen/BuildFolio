@@ -84,13 +84,13 @@ const Login = () => {
                         <div className="form-control mt-5">
                             <button
                                 type="button"
-                                className="btn bg-blue-500 text-white flex items-center justify-center"
+                                className="btn bg-primary hover:bg-secondary text-white flex items-center justify-center"
                                 onClick={loginGoogle}
                             >
                                 <div className="bg-white p-1">
                                     <FcGoogle></FcGoogle>
                                 </div>
-                                Sign in with Google
+                                Login with Google
                             </button>
                         </div>
 
@@ -130,7 +130,7 @@ const Login = () => {
                             </div>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn bg-[#403F3F] text-white">Login</button>
+                            <button className="btn bg-primary hover:bg-secondary text-white">Login</button>
                         </div>
                         <div className="mt-5">
                             <p className="text-center text-[16px] font-[600] text-[#706F6F]">Dont't Have An Account ? <Link to="/auth/register" className="text-[#026C84]">Register</Link> </p>
