@@ -49,7 +49,7 @@ const ApartmentCard = ({ apartment }) => {
     };
     return (
         <div>
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden text-black border">
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden text-primary border">
                 <img className="h-[180px] w-full object-cover rounded rounded-b-none" src={apartment.apartmentImage} alt="Thumbnail" />
                 <div className="p-4">
                     <div className="flex items-center justify-between font-semibold">
@@ -63,7 +63,7 @@ const ApartmentCard = ({ apartment }) => {
                     <div className="flex items-center justify-center">
                         <button
                             onClick={handleAgreement}
-                            className="mt-4 btn btn-outline text-[#026C84] hover:bg-[#026C84] border-[#026C84] w-full font-bold rounded">
+                            className="mt-4 btn btn-outline text-primary hover:bg-primary border-primary w-full font-bold rounded">
                             {apartment.agreementButton}
                         </button>
                     </div>

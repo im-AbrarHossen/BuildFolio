@@ -22,10 +22,15 @@ const Navbar = () => {
         setImgSrc(Avatar); // Fallback to Avatar on error
     };
 
+    const navLinkClass = ({ isActive }) =>
+        isActive
+            ? "border-b-2 border-primary text-primary font-bold rounded-none p-0 hover:bg-transparent focus:bg-transparent active:bg-transparent focus:outline-none"
+            : "text-black hover:text-primary font-bold rounded-none p-0 transition hover:bg-transparent focus:bg-transparent active:bg-transparent focus:outline-none"
+
     return (
         <div className="flex justify-between items-center w-11/12 mx-auto bg-gray-300 rounded px-2">
             <details className="dropdown lg:hidden">
-                <summary className="btn bg-[#026C84] text-white">
+                <summary className="btn bg-primary hover:bg-secondary text-white">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5"
@@ -41,8 +46,16 @@ const Navbar = () => {
                 </summary>
                 <ul
                     className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 w-52 p-2 shadow">
-                    <li><NavLink to="/">Home</NavLink></li>
-                    <li><NavLink to="/apartment">Apartment</NavLink></li>
+                    <li><NavLink to="/" className={({ isActive }) =>
+                        isActive
+                            ? "bg-primary text-white font-semibold"
+                            : "text-black hover:text-primary"
+                    }>Home</NavLink></li>
+                    <li><NavLink to="/apartment" className={({ isActive }) =>
+                        isActive
+                            ? "bg-primary text-white font-semibold"
+                            : "text-black hover:text-primary"
+                    }>Apartment</NavLink></li>
                 </ul>
             </details>
             <Link to="/" className="flex lg:flex-row flex-col items-center lg:ml-[-20px]">
@@ -51,9 +64,9 @@ const Navbar = () => {
             </Link>
             <div className="hidden lg:flex lg:gap-5">
                 <div className="hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="/apartment">Apartment</NavLink></li>
+                    <ul className="menu menu-horizontal px-1 flex items-center gap-4">
+                        <li><NavLink to="/" className={navLinkClass}>Home</NavLink></li>
+                        <li><NavLink to="/apartment" className={navLinkClass}>Apartment</NavLink></li>
                     </ul>
                 </div>
             </div>
@@ -85,7 +98,7 @@ const Navbar = () => {
                         </div>
                     ) : (
                         <div className="flex items-center gap-3">
-                            <Link to="/auth/login" className="btn text-white bg-[#026C84] hover:bg-[#2c8a9f]">Login</Link>
+                            <Link to="/auth/login" className="btn text-white bg-[#026C84] hover:bg-secondary">Login</Link>
                         </div>
                     )
                 }
