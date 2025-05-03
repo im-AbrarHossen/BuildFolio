@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ProgressBar = ({ value }) => {
     return (
         <div className="w-11/12 mx-auto mt-4">
             <div className="relative w-full h-6 bg-gray-200 rounded-full overflow-hidden shadow-inner">
                 <div
-                    className="h-full bg-blue-500 transition-all duration-500 ease-in-out"
+                    className="h-full bg-primary transition-all duration-500 ease-in-out"
                     style={{ width: `${value}%` }}
                 ></div>
             </div>
@@ -75,7 +76,7 @@ const MyProfile = () => {
     return (
         <div className="w-11/12 mx-auto">
             {/* Profile Header */}
-            <div className="flex flex-col items-center py-[80px]">
+            <div className="flex flex-col items-center mt-[100px] gap-6">
                 <img
                     src={user.photoURL}
                     alt={`${user.displayName}'s profile`}
@@ -85,6 +86,7 @@ const MyProfile = () => {
                     <h1 className="text-2xl font-semibold text-gray-800">{user.displayName}</h1>
                     <p className="text-gray-600">{user.email}</p>
                 </div>
+                <Link to="/dashboard/settings" className="btn bg-primary hover:bg-secondary border-none text-white">Update</Link>
             </div>
 
             {/* Profile Details */}

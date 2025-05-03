@@ -20,6 +20,7 @@ import AdminRouter from "./AdminRouter";
 import MemberRouter from "./MemberRouter";
 import Payment from "../PaymentComponents/Payment";
 import WelcomeDashboard from "../components/WelcomeDashboard";
+import Settings from "../components/Settings";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
             {
                 path: "my-profile",
                 element: <MyProfile />,
+            },
+            {
+                path: "settings",
+                element: <Settings />,
             },
             {
                 path: "manage-members",
@@ -98,7 +103,6 @@ const router = createBrowserRouter([
                     </MemberRouter>
                 ),
             },
-
         ],
     },
     {

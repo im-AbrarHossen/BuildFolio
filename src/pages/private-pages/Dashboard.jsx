@@ -11,6 +11,7 @@ import { FaHistory } from "react-icons/fa";
 import { VscRequestChanges } from "react-icons/vsc";
 import { SiGoogletagmanager } from "react-icons/si";
 import { RiCoupon3Fill } from "react-icons/ri";
+import { IoMdSettings } from "react-icons/io";
 
 const Dashboard = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -94,7 +95,7 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/manage-members"
-                                            className="block py-2 px-3 rounded hover:bg-secondary"
+                                            className={`px-3 py-2 border-none rounded w-full text-white flex flex-row items-center ${isActive("/dashboard/manage-members") ? "bg-secondary" : "bg-transparent hover:bg-secondary"}`}
                                         >
                                             {isSidebarOpen ? "Manage Members" : <span className="text-xl"><SiGoogletagmanager className="mx-[-6px]" /></span>}
                                         </Link>
@@ -104,7 +105,7 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/make-payment"
-                                            className="block py-2 px-3 rounded hover:bg-secondary"
+                                            className={`px-3 py-2 border-none rounded w-full text-white flex flex-row items-center ${isActive("/dashboard/make-payment") ? "bg-secondary" : "bg-transparent hover:bg-secondary"}`}
                                         >
                                             {isSidebarOpen ? "Make Payment" : <span className="text-xl"><MdPayments className="mx-[-6px]" /></span>}
                                         </Link>
@@ -114,7 +115,7 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/payment-history"
-                                            className="block py-2 px-3 rounded hover:bg-secondary"
+                                            className={`px-3 py-2 border-none rounded w-full text-white flex flex-row items-center ${isActive("/dashboard/payment-history") ? "bg-secondary" : "bg-transparent hover:bg-secondary"}`}
                                         >
                                             {isSidebarOpen ? "Payment History" : <span className="text-xl"><FaHistory className="mx-[-6px]" /></span>}
                                         </Link>
@@ -150,7 +151,7 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/agreement-request"
-                                            className="block py-2 px-3 rounded hover:bg-secondary"
+                                            className={`px-3 py-2 border-none rounded w-full text-white flex flex-row items-center ${isActive("/dashboard/agreement-request") ? "bg-secondary" : "bg-transparent hover:bg-secondary"}`}
                                         >
                                             {isSidebarOpen ? "Agreement Requests" : <span className="text-xl"><VscRequestChanges className="mx-[-6px]" /></span>}
                                         </Link>
@@ -160,12 +161,20 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/manage-coupons"
-                                            className="block py-2 px-3 rounded hover:bg-secondary"
+                                            className={`px-3 py-2 border-none rounded w-full text-white flex flex-row items-center ${isActive("/dashboard/manage-coupons") ? "bg-secondary" : "bg-transparent hover:bg-secondary"}`}
                                         >
                                             {isSidebarOpen ? "Manage Coupons" : <span className="text-xl"><RiCoupon3Fill className="mx-[-6px]" /></span>}
                                         </Link>
                                     </li>
                                 )}
+                                <li>
+                                    <Link
+                                        to="/dashboard/settings"
+                                        className={`px-3 py-2 border-none rounded w-full text-white flex flex-row items-center ${isActive("/dashboard/settings") ? "bg-secondary" : "bg-transparent hover:bg-secondary"}`}
+                                    >
+                                        {isSidebarOpen ? "Settings" : <span className="text-xl"><IoMdSettings className="mx-[-6px]" /></span>}
+                                    </Link>
+                                </li>
                             </ul>
                             <button
                                 onClick={handleLogout}
