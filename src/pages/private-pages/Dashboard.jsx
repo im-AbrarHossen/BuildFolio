@@ -6,7 +6,11 @@ import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import { CgLogOut, CgProfile } from "react-icons/cg";
 import { TfiAnnouncement } from "react-icons/tfi";
-import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { MdOutlineDashboardCustomize, MdPayments } from "react-icons/md";
+import { FaHistory } from "react-icons/fa";
+import { VscRequestChanges } from "react-icons/vsc";
+import { SiGoogletagmanager } from "react-icons/si";
+import { RiCoupon3Fill } from "react-icons/ri";
 
 const Dashboard = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -90,9 +94,9 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/manage-members"
-                                            className="block py-2 px-3 rounded hover:bg-[#3999ae]"
+                                            className="block py-2 px-3 rounded hover:bg-secondary"
                                         >
-                                            Manage Members
+                                            {isSidebarOpen ? "Manage Members" : <span className="text-xl"><SiGoogletagmanager className="mx-[-6px]" /></span>}
                                         </Link>
                                     </li>
                                 )}
@@ -102,7 +106,7 @@ const Dashboard = () => {
                                             to="/dashboard/make-payment"
                                             className="block py-2 px-3 rounded hover:bg-secondary"
                                         >
-                                            Make Payment
+                                            {isSidebarOpen ? "Make Payment" : <span className="text-xl"><MdPayments className="mx-[-6px]" /></span>}
                                         </Link>
                                     </li>
                                 )}
@@ -110,9 +114,9 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/payment-history"
-                                            className="block py-2 px-3 rounded hover:bg-[#3999ae]"
+                                            className="block py-2 px-3 rounded hover:bg-secondary"
                                         >
-                                            Payment History
+                                            {isSidebarOpen ? "Payment History" : <span className="text-xl"><FaHistory className="mx-[-6px]" /></span>}
                                         </Link>
                                     </li>
                                 )}
@@ -128,12 +132,12 @@ const Dashboard = () => {
                                                 ? "/dashboard/make-announcements"
                                                 : "/dashboard/announcements"
                                         )
-                                                ? "bg-secondary"
-                                                : "bg-transparent hover:bg-secondary"
+                                            ? "bg-secondary"
+                                            : "bg-transparent hover:bg-secondary"
                                             }`}
                                     >
-                                        
-                                        {isSidebarOpen ? 
+
+                                        {isSidebarOpen ?
                                             <span>
                                                 {adminEmails.includes(user.email)
                                                     ? "Make Announcement"
@@ -146,9 +150,9 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/agreement-request"
-                                            className="block py-2 px-3 rounded hover:bg-[#3999ae]"
+                                            className="block py-2 px-3 rounded hover:bg-secondary"
                                         >
-                                            Agreement Requests
+                                            {isSidebarOpen ? "Agreement Requests" : <span className="text-xl"><VscRequestChanges className="mx-[-6px]" /></span>}
                                         </Link>
                                     </li>
                                 )}
@@ -156,9 +160,9 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             to="/dashboard/manage-coupons"
-                                            className="block py-2 px-3 rounded hover:bg-[#3999ae]"
+                                            className="block py-2 px-3 rounded hover:bg-secondary"
                                         >
-                                            Manage Coupons
+                                            {isSidebarOpen ? "Manage Coupons" : <span className="text-xl"><RiCoupon3Fill className="mx-[-6px]" /></span>}
                                         </Link>
                                     </li>
                                 )}
@@ -167,7 +171,7 @@ const Dashboard = () => {
                                 onClick={handleLogout}
                                 className="block w-full text-start py-2 pl-3 rounded hover:bg-secondary"
                             >
-                                {isSidebarOpen ? "Logout" : <span className="text-xl"><CgLogOut className="ml-[-5px]"/></span>}
+                                {isSidebarOpen ? "Logout" : <span className="text-xl"><CgLogOut className="ml-[-5px]" /></span>}
                             </button>
                         </div>
                     </div>

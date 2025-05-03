@@ -60,7 +60,7 @@ const ManageMembers = () => {
             <h3 className="text-lg font-semibold">{member.userName}</h3>
             <p className="text-gray-600 break-words overflow-hidden">{member.userEmail}</p>
             <button
-              className="mt-3 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+              className="mt-3 bg-primary text-white btn border-none hover:bg-secondary w-full"
               onClick={() => handleRemove(member._id)}
             >
               Remove

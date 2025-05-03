@@ -79,27 +79,27 @@ const AgreementRequest = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {requests.map((request) => (
               <div key={request._id} className="border border-gray-300 rounded-lg p-4 shadow-sm">
-                <p className="text-sm font-medium">
+                <p className="text-sm font-medium break-words overflow-hidden">
                   <span className="font-bold">Name:</span> {request.userName}
                 </p>
-                <p className="text-sm font-medium">
+                <p className="text-sm font-medium break-words overflow-hidden">
                   <span className="font-bold">Email:</span> {request.userEmail}
                 </p>
-                <p className="text-sm font-medium">
+                <p className="text-sm font-medium break-words overflow-hidden">
                   <span className="font-bold">Floor:</span> {request.floorNo}
                 </p>
-                <p className="text-sm font-medium">
+                <p className="text-sm font-medium break-words overflow-hidden">
                   <span className="font-bold">Apartment:</span> {request.apartmentNo}
                 </p>
-                <p className="text-sm font-medium">
+                <p className="text-sm font-medium break-words overflow-hidden">
                   <span className="font-bold">Rent:</span> ${request.rent}
                 </p>
-                <p className="text-sm font-medium">
+                <p className="text-sm font-medium break-words overflow-hidden">
                   <span className="font-bold">Status:</span> {request.status}
                 </p>
                 <div className="mt-4 flex gap-2">
                   {request.status === "pending" ? (
-                    <>
+                    <div className="flex flex-row sm:flex-col gap-4">
                       <button
                         className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition duration-200 w-full"
                         onClick={() => handleUpdateStatus(request._id, "accepted")}
@@ -112,7 +112,7 @@ const AgreementRequest = () => {
                       >
                         Reject
                       </button>
-                    </>
+                    </div>
                   ) : (
                     <span className="text-gray-500">Processed</span>
                   )}
