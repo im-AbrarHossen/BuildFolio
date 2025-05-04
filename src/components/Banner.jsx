@@ -4,11 +4,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import Slider5 from "../assets/images/slider5.png"; // Replace with your image paths
-import Slider2 from "../assets/images/slider2.png";
-import Slider3 from "../assets/images/slider3.png";
-import Slider4 from "../assets/images/slider4.png";
-import Slider6 from "../assets/images/slider6.png";
+import Slider2 from "../assets/images/slider2.webp";
+import Slider3 from "../assets/images/slider3.webp";
+import Slider4 from "../assets/images/slider4.webp";
+import Slider5 from "../assets/images/slider5.webp"; // Replace with your image paths
+import Slider6 from "../assets/images/slider6.webp";
 
 const Banner = () => {
     return (
