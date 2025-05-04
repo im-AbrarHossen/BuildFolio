@@ -78,13 +78,7 @@ const Register = () => {
                             </label>
                             <input name="name" type="text" placeholder="Enter your name" className="input input-bordered" required />
                         </div>
-                        <div className="form-control mt-5">
-                            <label className="label">
-                                <span className="label-text text-[20px] font-[600] text-[#403F3F]">Photo URL</span>
-                            </label>
-                            <input name="photo" type="url" placeholder="Enter photo URL" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control mt-5">
+                        <div className="form-control">
                             <label className="label">
                                 <span className="label-text text-[20px] font-[600] text-[#403F3F]">Email address</span>
                             </label>
@@ -116,17 +110,17 @@ const Register = () => {
                             </div>
                             {passwordError && <p className="text-red-500 text-sm mt-1">{passwordError}</p>}
                         </div>
-                        <div className="form-control mt-5">
+                        <div className="form-control">
                             <label className="label justify-end gap-3 flex-row-reverse cursor-pointer">
                                 <span className="label-text">Accept Term & Conditions</span>
                                 <input name="check" type="checkbox" className="checkbox" required />
                             </label>
                         </div>
-                        <div className="form-control mt-6">
-                            <button className="btn bg-[#403F3F] text-white">Register</button>
+                        <div className="form-control">
+                            <button className="btn bg-primary hover:bg-secondary text-white">Register</button>
                         </div>
                         <div className="mt-5">
-                            <p className="text-center text-[16px] font-[600] text-[#706F6F]">Already Have An Account ? <Link to="/login" className="text-[#026C84]">Login</Link> </p>
+                            <p className="text-center text-[16px] font-[600] text-[#706F6F]">Already Have An Account ? <Link to="/auth/login" className="text-primary">Login</Link> </p>
                         </div>
                     </form>
                 </div>
